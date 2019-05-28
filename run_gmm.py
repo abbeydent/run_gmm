@@ -28,7 +28,7 @@ for i in range(5):
 	#print(n)
 	gaussian_predictions = GaussianMixture(n_components=n).fit(dataset).predict(dataset)
 	plt.scatter(dataset[0], dataset[1], c=gaussian_predictions)
-	plt.savefig("scatterplot_gaussian" + str(n) + ".png")
+	plt.savefig("scatterplot_gaussian_" + str(n) + ".png")
 	print("Gaussian " + str(n) + " components")
 	print(metrics.silhouette_score(dataset, gaussian_predictions))
 
