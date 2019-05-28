@@ -37,7 +37,28 @@ print(metrics.silhouette_score(dataset, kmeans_predictions_2))
 
 
 
-gaussian_predictions = GaussianMixture(n_components=3).fit(dataset).predict(dataset)
-plt.scatter(dataset[0], dataset[1], c=gaussian_predictions)
+# gaussian_predictions = GaussianMixture(n_components=3).fit(dataset).predict(dataset)
+# plt.scatter(dataset[0], dataset[1], c=gaussian_predictions)
+# plt.savefig("scatterplot_gaussian_3.png")
+
+
+gaussian_predictions_4 = GaussianMixture(n_components=4).fit(dataset).predict(dataset)
+plt.scatter(dataset[0], dataset[1], c=gaussian_predictions_4)
+plt.savefig("scatterplot_gaussian_4.png")
+print("Gaussian 4 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions_4))
+
+gaussian_predictions_3 = GaussianMixture(n_components=3).fit(dataset).predict(dataset)
+plt.scatter(dataset[0], dataset[1], c=gaussian_predictions_3)
 plt.savefig("scatterplot_gaussian_3.png")
+print("Gaussian 3 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions_3))
+
+gaussian_predictions_2 = GaussianMixture(n_components=2).fit(dataset).predict(dataset)
+plt.scatter(dataset[0], dataset[1], c=gaussian_predictions_2)
+plt.savefig("scatterplot_gaussian_2.png")
+print("Gaussian 2 components")
+print(metrics.silhouette_score(dataset, gaussian_predictions_2))
+
+
 
